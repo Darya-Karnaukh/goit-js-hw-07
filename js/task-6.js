@@ -27,15 +27,18 @@ function createBoxes(amount) {
       divBoxes.innerHTML = '';
   
       let size = 30;
+      let arrayDiv = [];
+      
       for (let i = 1; i <= inputValue; i++) {
-        
         const newDiv = document.createElement("div");
         newDiv.style.height = size + "px";
         newDiv.style.width = size + "px";
         newDiv.style.backgroundColor = getRandomHexColor();
-        divBoxes.append(newDiv);
         size += 10;
+        arrayDiv.push(newDiv);
       }
+
+      divBoxes.append(...arrayDiv);
 
       inputElement.value = '';
 
